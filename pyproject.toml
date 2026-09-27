@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "linea"
+version = "0.1.0"
+description = "Local-first data provenance tracker — trace how every file was made, verify reproducibility, explore the lineage graph."
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "遥か"}]
+keywords = ["provenance", "lineage", "reproducibility", "data-science", "tracking"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Environment :: Web Environment",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering",
+    "Topic :: Software Development :: Version Control",
+    "Topic :: System :: Filesystems",
+]
+
+[project.scripts]
+linea = "linea.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["linea*"]
+
+[tool.setuptools.package-data]
+linea = ["web/*"]

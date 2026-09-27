@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Linea — Data Provenance</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand">🔗 Linea</div>
+  <div class="pills">
+    <span class="pill"><b id="k-runs">–</b> runs</span>
+    <span class="pill"><b id="k-files">–</b> files</span>
+    <span class="pill"><b id="k-ok">–</b> ok</span>
+    <span class="pill"><b id="k-fail">–</b> fail</span>
+  </div>
+  <div class="actions">
+    <button id="btn-refresh" onclick="loadAll()">↻ Refresh</button>
+  </div>
+</header>
+
+<main>
+  <div class="graph-panel">
+    <h2>Provenance Graph</h2>
+    <div class="canvas-wrap">
+      <canvas id="graph-canvas"></canvas>
+    </div>
+    <div class="legend">
+      <span><i class="dot file"></i>file</span>
+      <span><i class="dot run"></i>run</span>
+      <span class="sep"></span>
+      <span><i class="dot ok"></i>exit 0</span>
+      <span><i class="dot fail"></i>failed</span>
+    </div>
+  </div>
+
+  <div class="side-panel">
+    <div class="runs-panel">
+      <h2>Runs</h2>
+      <div class="run-list" id="run-list"></div>
+    </div>
+    <div class="detail-panel" id="detail-panel">
+      <h2 id="detail-title">Detail</h2>
+      <div id="detail-content" class="detail-content">Click a node in the graph or a run in the list to inspect.</div>
+    </div>
+  </div>
+</main>
+
+<footer>Linea · local-first provenance · zero dependencies</footer>
+<script src="app.js"></script>
+</body>
+</html>
